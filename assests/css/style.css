@@ -135,6 +135,11 @@ button {
     .navbar-toggler {
         display: none;
     }
+
+    .footer-container{
+        padding-bottom: 70px;
+        background-color: #000000;
+    }
 }
 
 /* navbar end  */
