@@ -1,3 +1,27 @@
+body {
+    overflow: hidden;
+}
+
+/* Scrollable content when the loader disappears */
+body.scrollable {
+    overflow: auto;
+}
+
+#content.show {
+    opacity: 1;
+    transform: translateY(0);
+    /* Slide down into position */
+}
+
+#content {
+    opacity: 0;
+    transform: translateY(-100px);
+    /* Start above the screen */
+    transition: opacity 1s ease, transform 1s ease;
+    /* Slide down and fade-in transition */
+}
+
+
 /* selection */
 ::selection {
     color: red;
@@ -254,3 +278,84 @@ button {
 
 /* section end */
 
+/* Lodar */
+
+.preloader-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  /* Full height of the viewport */
+    width: 100vw;   /* Full width of the viewport */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(0, 0, 0); /* Optional: background color */
+  }
+
+  .loader {
+    height: 140px;
+    width: 140px;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    position: relative;
+    place-items: center;
+  }
+
+  .loader div {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    animation: move 4s infinite;
+  }
+
+  .loader div:nth-child(1) {
+    background-color: rgb(158, 136, 246);
+    box-shadow: rgb(158, 136, 246) 0px 7px 29px 0px;
+    transform: translate(-30px, -30px);
+    animation-delay: -1s;
+  }
+
+  .loader div:nth-child(2) {
+    background-color: rgb(97, 183, 253);
+    box-shadow: rgb(97, 183, 253) 0px 7px 29px 0px;
+    transform: translate(30px, -30px);
+    animation-delay: -2s;
+  }
+
+  .loader div:nth-child(3) {
+    background-color: rgb(95, 249, 175);
+    box-shadow: rgb(95, 249, 175) 0px 7px 29px 0px;
+    transform: translate(30px, 30px);
+    animation-delay: -3s;
+  }
+
+  .loader div:nth-child(4) {
+    background-color: rgb(243, 171, 89);
+    box-shadow: rgb(243, 171, 89) 0px 7px 29px 0px;
+    transform: translate(-30px, 30px);
+    animation-delay: -4s;
+  }
+
+  @keyframes move {
+    0% {
+      transform: translate(-30px, -30px);
+    }
+
+    25% {
+      transform: translate(30px, -30px);
+    }
+
+    50% {
+      transform: translate(30px, 30px);
+    }
+
+    75% {
+      transform: translate(-30px, 30px);
+    }
+
+    100% {
+      transform: translate(-30px, -30px);
+    }
+  }
+/* Lodar */
